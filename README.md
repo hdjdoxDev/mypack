@@ -6,7 +6,7 @@ I don't have too much time to make a good documentation of the Library yet, but 
 Obviously not all the code or the ideas in this framework are mine, some might :).
 
 It's highly modular and works on a [View - ViewModel - Service] frame to keep UI dart code, Business logic and Storage/APIs interfaces separated.
-The frame lays [Models] that contains common objects definitions and implementations.
+This frame lays on [Models] that contains common objects definitions and implementations.
 
 | Feature | Android | iOS | Linux | macOS |
 | :--- | :---: | :---: | :---: | :---: |
