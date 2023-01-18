@@ -5,8 +5,8 @@ This is the juice I got sqeezing the code collected in the last 3 years while I 
 I don't have too much time to make a good documentation of the Library yet, but for sure it is a work in progress and it will be refined.
 Obviously not all the code or the ideas in this framework are mine, some might :).
 
-It works on a [View - ViewModel - Service] frame, as for UI dart code, Business logic and Storage/APIs interfaces.
-The frame lays [Models] that contains common objects definitions. 
+It's highly modular and works on a [View - ViewModel - Service] frame to keep UI dart code, Business logic and Storage/APIs interfaces separated.
+The frame lays [Models] that contains common objects definitions and implementations.
 
 | Feature | Android | iOS | Linux | macOS |
 | :--- | :---: | :---: | :---: | :---: |
@@ -17,3 +17,5 @@ The frame lays [Models] that contains common objects definitions.
 | Device Storage | ✔️ | ❌ | ✔️ | ❌️ |
 | CSV support | ✔️ | ❌ | ✔️ | ❌️ |
 | TCP Messaging | ❌ | ❌ | ✔️ | ❌️ |
+
+Dependencies: see ./pubspec.yaml
