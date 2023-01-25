@@ -10,7 +10,7 @@ class DatabaseTableSqflApi {
   static DatabaseTableTable tableTable = DatabaseTableTable();
   static DatabaseColumnTable columnTable = DatabaseColumnTable();
 
-  static const _dbName = 'database_tables.db';
+  static const _dbName = 'database_table.db';
 
   final Database _db;
 

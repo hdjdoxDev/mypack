@@ -42,6 +42,9 @@ class DatabaseColumnEntry extends DatabaseColumnFields implements ISqflEntry {
   DatabaseColumnEntry.fromTable(map)
       : id = map[DatabaseColumnTable.colId],
         super.fromTable(map);
+        
+  @override
+  get fields => super;
 }
 
 class DatabaseColumnFields implements ISqflEntryFields {

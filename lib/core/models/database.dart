@@ -42,7 +42,7 @@ abstract class IDatabaseTable {
       "CREATE TABLE $name (" +
       columns
           .map((entry) =>
-              "${entry.name!} ${entry.type!.sqflite}${entry.key! ? ' PRIMARY KEY' : ''}")
+              "`${entry.name!}` ${entry.type!.sqflite}${true == entry.key ? ' PRIMARY KEY' : ''}")
           .join(", ") +
       ");";
 
