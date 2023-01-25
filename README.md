@@ -1,42 +1,21 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+#  My Framework
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Backbone to easily write simple apps using the powerfull Flutter Widgets to design UIs and fast and flexible SQFLite to store data.
+This is the juice I got sqeezing the code collected in the last 3 years while I was learning Flutter e developing different apps.
+I don't have too much time to make a good documentation of the Library yet, but for sure it is a work in progress and it will be refined.
+Obviously not all the code or the ideas in this framework are mine, some might :).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+It's highly modular and works on a [View - ViewModel - Service] frame to keep UI dart code, Business logic and Storage/APIs interfaces separated.
+This frame lays on [Models] that contains common objects definitions and implementations.
 
-# my_framework
+| Feature | Android | iOS | Linux | macOS |
+| :--- | :---: | :---: | :---: | :---: |
+| Examples for (View - ViewModel) | ✔️ | ✔️ | ✔️ | ✔️ |
+| SQFLite support | ✔️ | ✔️ | ✔️ | ✔️ |
+| Firebase Firestore support | ✔️ | ❌️ | ❌️ | ❌️ |
+| Notifications | ✔️ | ❌ | ❌ | ❌️ |
+| Device Storage | ✔️ | ❌ | ✔️ | ❌️ |
+| CSV support | ✔️ | ❌ | ✔️ | ❌️ |
+| TCP Messaging | ❌ | ❌ | ✔️ | ❌️ |
 
-This is a framework to create a Flutter App extrancted during development of different apps.
-
-## Features
-
-It contains:
-
-- 
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Dependencies: see ./pubspec.yaml
