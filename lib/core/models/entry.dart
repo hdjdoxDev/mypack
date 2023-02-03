@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_final_fields
 
-mixin IEntry{
+mixin IEntry {
   final _id = 0;
   String _entryNotes = "";
   int _lastModified = 0;
@@ -10,10 +10,8 @@ mixin IEntry{
   String get entryNotes => _entryNotes;
   int get lastModified => _lastModified;
   int? get exportId => _exportId;
-  
+
   get fields;
 }
 
-mixin IEntryFields {
-  
-}
+mixin IEntryFields {}

@@ -1,4 +1,3 @@
-
 import 'package:mypack/utils/time.dart';
 
 import 'database.dart';
@@ -31,9 +30,6 @@ class DatabaseColumnEntry extends DatabaseColumnFields implements ISqflEntry {
   });
 
   @override
-  String get entryNotes => "";
-
-  @override
   int? get exportId => 0;
 
   @override
@@ -42,9 +38,12 @@ class DatabaseColumnEntry extends DatabaseColumnFields implements ISqflEntry {
   DatabaseColumnEntry.fromTable(map)
       : id = map[DatabaseColumnTable.colId],
         super.fromTable(map);
-        
+
   @override
-  get fields => super;
+  DatabaseColumnFields get fields => this;
+  
+  @override
+  String get entryNotes => "";
 }
 
 class DatabaseColumnFields implements ISqflEntryFields {
