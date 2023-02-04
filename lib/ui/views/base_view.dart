@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/enums/viewstate.dart';
+import '../../core/enums/viewstate.dart';
 import '../../core/viewmodels/base_viewmodel.dart';
 import '../../locator.dart';
 import '../shared/errors.dart';
