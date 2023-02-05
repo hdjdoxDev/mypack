@@ -49,8 +49,8 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
     required this.builder,
     this.onModelReady,
     this.title,
-    required this.onTapBar,
-    required this.onDoubleTapBar,
+    this.onTapBar,
+    this.onDoubleTapBar,
   });
 
   final Widget Function(
@@ -60,8 +60,8 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
   ) builder;
   final void Function(Model)? onModelReady;
   final String? title;
-  final void Function(Model) onTapBar;
-  final void Function(Model) onDoubleTapBar;
+  final void Function(Model)? onTapBar;
+  final void Function(Model)? onDoubleTapBar;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +69,8 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
       onModelReady: onModelReady,
       builder: (context, model, child) => Scaffold(
         appBar: TappableAppBar(
-          onTap: () => onTapBar(model),
-          onDoubleTap: () => onDoubleTapBar(model),
+          onTap: () => onTapBar?(model) ?? () => {},
+          onDoubleTap: () => onDoubleTapBar?(model) ?? () => {},
           appBar: AppBar(
             backgroundColor: Theme.of(context).colorScheme.secondary,
             foregroundColor: Theme.of(context).colorScheme.background,
