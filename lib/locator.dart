@@ -19,7 +19,7 @@ import 'package:get_it/get_it.dart';
 
 GetIt locator = GetIt.instance;
 
-void setupLocator() {
+// void setupLocator() {
   // Api
   // locator.registerLazySingletonAsync<SleepSqflApi>(() => SleepSqflApi.init());
   // locator.registerLazySingleton(() => BestofApi());
@@ -35,4 +35,4 @@ void setupLocator() {
   // locator.registerFactory(() => RoutinesModel());
   // locator.registerFactory(() => SettingsModel());
   // End of Models
-}
+// }

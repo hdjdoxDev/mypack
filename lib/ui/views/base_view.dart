@@ -12,8 +12,10 @@ class BaseView<Model extends BaseModel> extends StatefulWidget {
     Model model,
     Widget? child,
   ) builder;
+  final Widget? loading;
   final Function(Model)? onModelReady;
-  const BaseView({super.key, required this.builder, this.onModelReady});
+  const BaseView(
+      {super.key, required this.builder, this.onModelReady, this.loading});
 
   @override
   State<BaseView<Model>> createState() => _BaseViewState<Model>();
@@ -36,7 +38,7 @@ class _BaseViewState<Model extends BaseModel> extends State<BaseView<Model>> {
       value: model,
       child: Consumer<Model>(
         builder: (context, model, child) => model.state == ViewState.busy
-            ? const Loading()
+            ? widget.loading ?? const Loading()
             : widget.builder(context, model, child),
       ),
     );
@@ -51,6 +53,8 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
     this.title,
     this.onTapBar,
     this.onDoubleTapBar,
+    this.actions,
+    this.loading,
   });
 
   final Widget Function(
@@ -62,23 +66,30 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
   final String? title;
   final void Function(Model)? onTapBar;
   final void Function(Model)? onDoubleTapBar;
+  final List<Widget>? actions;
+  final Widget? loading;
 
   @override
   Widget build(BuildContext context) {
     return BaseView<Model>(
       onModelReady: onModelReady,
+      loading: loading,
       builder: (context, model, child) => Scaffold(
         appBar: TappableAppBar(
-          onTap: () => onTapBar?(model) ?? () => {},
-          onDoubleTap: () => onDoubleTapBar?(model) ?? () => {},
+          onTap: onTapBar != null ? () => onTapBar!(model) : () => {},
+          onDoubleTap:
+              onDoubleTapBar != null ? () => onDoubleTapBar!(model) : () => {},
           appBar: AppBar(
             backgroundColor: Theme.of(context).colorScheme.secondary,
             foregroundColor: Theme.of(context).colorScheme.background,
-            title: Text(title ?? 'Custom View',
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                )),
+            title: Text(
+              title ?? 'Custom View',
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            actions: actions ?? [],
           ),
         ),
         body: builder(context, model, child),
