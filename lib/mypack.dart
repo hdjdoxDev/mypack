@@ -29,7 +29,6 @@ export 'ui/shared/layout.dart'
         CancelButton,
         SaveButton,
         emptyWidget,
-        showConfirmDialog,
-        TappableAppBar;
-export 'ui/views/base_view.dart' show BaseView;
+        showConfirmDialog;
+export 'ui/views/base_view.dart' show BaseView, CustomView, TappableAppBar;
 export 'core/enums/editmode.dart' show EditMode;

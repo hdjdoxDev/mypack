@@ -207,24 +207,3 @@ Future<bool> showConfirmDialog(
 
   return (isConfirm != null) ? isConfirm : false;
 }
-
-class TappableAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final VoidCallback onTap;
-  final VoidCallback onDoubleTap;
-  final AppBar appBar;
-
-  const TappableAppBar(
-      {super.key,
-      required this.onTap,
-      required this.onDoubleTap,
-      required this.appBar});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: onTap, onDoubleTap: onDoubleTap, child: appBar);
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}

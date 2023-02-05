@@ -7,15 +7,13 @@ import '../../locator.dart';
 import '../shared/errors.dart';
 
 class BaseView<Model extends BaseModel> extends StatefulWidget {
-  final Widget Function(BuildContext context, Model model, Widget? child)
-      builder;
+  final Widget Function(
+    BuildContext context,
+    Model model,
+    Widget? child,
+  ) builder;
   final Function(Model)? onModelReady;
-  final String? title;
-  const BaseView(
-      {super.key,
-      required this.builder,
-      this.onModelReady,
-      this.title});
+  const BaseView({super.key, required this.builder, this.onModelReady});
 
   @override
   State<BaseView<Model>> createState() => _BaseViewState<Model>();
@@ -46,16 +44,66 @@ class _BaseViewState<Model extends BaseModel> extends State<BaseView<Model>> {
 }
 
 class CustomView<Model extends BaseModel> extends StatelessWidget {
-  const CustomView({super.key});
+  const CustomView({
+    super.key,
+    required this.builder,
+    this.onModelReady,
+    this.title,
+    required this.onTapBar,
+    required this.onDoubleTapBar,
+  });
+
+  final Widget Function(
+    BuildContext context,
+    Model model,
+    Widget? child,
+  ) builder;
+  final void Function(Model)? onModelReady;
+  final String? title;
+  final void Function(Model) onTapBar;
+  final void Function(Model) onDoubleTapBar;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Custom View"),
+    return BaseView<Model>(
+      onModelReady: onModelReady,
+      builder: (context, model, child) => Scaffold(
+        appBar: TappableAppBar(
+          onTap: () => onTapBar(model),
+          onDoubleTap: () => onDoubleTapBar(model),
+          appBar: AppBar(
+            backgroundColor: Theme.of(context).colorScheme.secondary,
+            foregroundColor: Theme.of(context).colorScheme.background,
+            title: Text(title ?? 'Custom View',
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                )),
+          ),
+        ),
+        body: builder(context, model, child),
       ),
     );
   }
-  
+}
 
-} 
+class TappableAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final VoidCallback onTap;
+  final VoidCallback onDoubleTap;
+  final AppBar appBar;
+
+  const TappableAppBar(
+      {super.key,
+      required this.onTap,
+      required this.onDoubleTap,
+      required this.appBar});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: onTap, onDoubleTap: onDoubleTap, child: appBar);
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
