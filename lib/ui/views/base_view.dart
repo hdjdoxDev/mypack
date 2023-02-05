@@ -44,3 +44,18 @@ class _BaseViewState<Model extends BaseModel> extends State<BaseView<Model>> {
     );
   }
 }
+
+class CustomView<Model extends BaseModel> extends StatelessWidget {
+  const CustomView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text("Custom View"),
+      ),
+    );
+  }
+  
+
+} 
