@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import '../enums/viewstate.dart';
 
-class BaseModel extends ChangeNotifier {
+abstract class BaseModel extends ChangeNotifier {
   ViewState _state = ViewState.idle;
   int cont = 0;
   ViewState get state => _state;
 
-  void loadModel() async {}
+  void loadModel();
 
   void setState(ViewState viewState) {
     if (viewState == ViewState.busy) {
@@ -21,4 +21,5 @@ class BaseModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+
 }
