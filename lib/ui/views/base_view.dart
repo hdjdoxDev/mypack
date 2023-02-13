@@ -6,7 +6,7 @@ import '../../core/viewmodels/base_viewmodel.dart';
 import '../../locator.dart';
 import '../shared/errors.dart';
 
-class BaseView<Model extends BaseModel> extends StatefulWidget {
+class BaseView<Model extends IModel> extends StatefulWidget {
   final Widget Function(
     BuildContext context,
     Model model,
@@ -21,7 +21,7 @@ class BaseView<Model extends BaseModel> extends StatefulWidget {
   State<BaseView<Model>> createState() => _BaseViewState<Model>();
 }
 
-class _BaseViewState<Model extends BaseModel> extends State<BaseView<Model>> {
+class _BaseViewState<Model extends IModel> extends State<BaseView<Model>> {
   Model model = locator<Model>();
 
   @override
@@ -45,7 +45,7 @@ class _BaseViewState<Model extends BaseModel> extends State<BaseView<Model>> {
   }
 }
 
-class CustomView<Model extends BaseModel> extends StatelessWidget {
+class CustomView<Model extends IModel> extends StatelessWidget {
   const CustomView({
     super.key,
     required this.builder,
@@ -54,6 +54,7 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
     this.onTapBar,
     this.onDoubleTapBar,
     this.actions,
+    this.leading,
     this.loading,
   });
 
@@ -67,6 +68,7 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
   final void Function(Model)? onTapBar;
   final void Function(Model)? onDoubleTapBar;
   final List<Widget>? actions;
+  final Widget? leading;
   final Widget? loading;
 
   @override
@@ -89,6 +91,7 @@ class CustomView<Model extends BaseModel> extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            leading: leading ?? const BackButton(),
             actions: actions ?? [],
           ),
         ),

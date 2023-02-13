@@ -1,6 +1,6 @@
 import 'base_viewmodel.dart';
 
-class ExampleModel extends BaseModel {
+class ExampleModel extends IModel {
   // late final Api _api;
 
   // variables

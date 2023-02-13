@@ -5,12 +5,12 @@ import 'package:mypack/utils/time.dart';
 import 'database.dart';
 
 abstract class ICsvEntry extends ICsvEntryFields {
-  int _id = 0;
+  String _id = "0";
   String _entryNotes = "";
   int _lastModified;
   int? _exportId;
 
-  int get id => _id;
+  String get id => _id;
   String get entryNotes => _entryNotes;
   int? get exportId => _exportId;
   int get lastModified => _lastModified;
@@ -18,8 +18,8 @@ abstract class ICsvEntry extends ICsvEntryFields {
   ICsvEntry.fromStringMap(Map<String, String> map)
       : _id = map[IDatabaseTable.colId] != null &&
                 map[IDatabaseTable.colId]!.isNotEmpty
-            ? int.parse(map[IDatabaseTable.colId]!)
-            : 0,
+            ? map[IDatabaseTable.colId]!
+            : "0",
         _entryNotes = map[IDatabaseTable.colEntryNotes] ?? "",
         _lastModified = map[IDatabaseTable.colLastModified] != null &&
                 map[IDatabaseTable.colLastModified]!.isNotEmpty
@@ -29,16 +29,15 @@ abstract class ICsvEntry extends ICsvEntryFields {
         super.fromStringMap(map);
 
   ICsvEntry.fromCsv(String row)
-      : _id = 0,
+      : _id = "0",
         _entryNotes = "",
         _lastModified = 0,
         _exportId = null,
         super.fromCsv(row);
 
-  @override
-  List<String> get csvHeaders => [
+  static List<String> get csvHeaders => [
         IDatabaseTable.colId,
-        ...super.csvHeaders,
+        ...ICsvEntryFields.csvHeaders,
         IDatabaseTable.colEntryNotes,
         IDatabaseTable.colLastModified,
         IDatabaseTable.colExportId,
@@ -55,10 +54,22 @@ abstract class ICsvEntry extends ICsvEntryFields {
 
   @override
   String toCsv() => toStringList().join(';');
+
+  void touch() {
+    _lastModified = now.millisecondsSinceEpoch;
+  }
+
+  void setExportId(int? exportId) {
+    _exportId = exportId;
+  }
+
+  void setEntryNotes(String? entryNotes) {
+    _entryNotes = entryNotes ?? "";
+  }
 }
 
 abstract class ICsvEntryFields {
-  List<String> get csvHeaders => [];
+  static List<String> get csvHeaders => [];
   ICsvEntryFields.fromStringMap(Map<String, String> map);
   ICsvEntryFields.fromCsv(String row);
   List<String> toStringList() => [];

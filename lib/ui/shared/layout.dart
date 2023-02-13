@@ -170,6 +170,35 @@ class SaveButton extends StatelessWidget {
   }
 }
 
+class MyIconButton extends StatelessWidget {
+  const MyIconButton({
+    super.key,
+    this.onTap,
+    this.onDoubleTap,
+    this.onLongPress,
+    required this.color,
+    required this.iconData,
+  });
+  final VoidCallback? onTap;
+  final VoidCallback? onDoubleTap;
+  final VoidCallback? onLongPress;
+  final Color color;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onLongPress: onLongPress,
+      onTap: onTap,
+      child: Container(
+        decoration: const BoxDecoration(shape: BoxShape.circle),
+        padding: const EdgeInsets.all(10),
+        child: Icon(iconData, color: color),
+      ),
+    );
+  }
+}
+
 const Widget emptyWidget = SizedBox(width: 0, height: 0);
 
 // confirmation dialog

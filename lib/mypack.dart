@@ -10,7 +10,7 @@ export 'core/models/structures.dart' show Period;
 export 'core/services/device_storage.dart' show DeviceStorage;
 export 'core/services/notifications.dart'
     show INotificationApi, NotificationApi;
-export 'core/viewmodels/base_viewmodel.dart' show BaseModel;
+export 'core/viewmodels/base_viewmodel.dart' show IModel;
 export 'ui/shared/errors.dart' show Loading, SomethingWentWrongApp;
 // export 'core/models/user.dart' show IUser, IUserFields;
 export 'ui/shared/calendar_strip.dart' show CalendarStrip;
