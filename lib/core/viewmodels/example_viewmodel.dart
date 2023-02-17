@@ -7,7 +7,7 @@ class ExampleModel extends IModel {
 
   // load
   @override
-  void loadModel() async {
+  void init({args}) async {
     // await locator.isReady<Api>();
     // _api = locator<Api>();
 

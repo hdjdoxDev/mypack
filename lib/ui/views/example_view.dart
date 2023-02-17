@@ -6,9 +6,8 @@ class ExampleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return BaseView(
-      onModelReady: (model) => {},
+      initModel: (model) => {},
       builder: (context, model, _) => Scaffold(
         appBar: AppBar(),
         body: SingleChildScrollView(child: Column(children: const [])),

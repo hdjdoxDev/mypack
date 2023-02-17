@@ -13,9 +13,9 @@ class BaseView<Model extends IModel> extends StatefulWidget {
     Widget? child,
   ) builder;
   final Widget? loading;
-  final Function(Model)? onModelReady;
+  final Function(Model)? initModel;
   const BaseView(
-      {super.key, required this.builder, this.onModelReady, this.loading});
+      {super.key, required this.builder, this.initModel, this.loading});
 
   @override
   State<BaseView<Model>> createState() => _BaseViewState<Model>();
@@ -26,8 +26,8 @@ class _BaseViewState<Model extends IModel> extends State<BaseView<Model>> {
 
   @override
   void initState() {
-    if (widget.onModelReady != null) {
-      widget.onModelReady!(model);
+    if (widget.initModel != null) {
+      widget.initModel!(model);
     }
     super.initState();
   }
@@ -49,7 +49,7 @@ class CustomView<Model extends IModel> extends StatelessWidget {
   const CustomView({
     super.key,
     required this.builder,
-    this.onModelReady,
+    this.initModel,
     this.title,
     this.onTapBar,
     this.onDoubleTapBar,
@@ -63,7 +63,7 @@ class CustomView<Model extends IModel> extends StatelessWidget {
     Model model,
     Widget? child,
   ) builder;
-  final void Function(Model)? onModelReady;
+  final void Function(Model)? initModel;
   final String? title;
   final void Function(Model)? onTapBar;
   final void Function(Model)? onDoubleTapBar;
@@ -74,7 +74,7 @@ class CustomView<Model extends IModel> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView<Model>(
-      onModelReady: onModelReady,
+      initModel: initModel,
       loading: loading,
       builder: (context, model, child) => Scaffold(
         appBar: TappableAppBar(

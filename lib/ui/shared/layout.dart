@@ -176,7 +176,7 @@ class MyIconButton extends StatelessWidget {
     this.onTap,
     this.onDoubleTap,
     this.onLongPress,
-    required this.color,
+    this.color = Colors.black,
     required this.iconData,
   });
   final VoidCallback? onTap;

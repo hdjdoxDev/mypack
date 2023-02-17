@@ -6,7 +6,7 @@ abstract class IModel extends ChangeNotifier {
   int cont = 0;
   ViewState get state => _state;
 
-  void loadModel();
+  void init({dynamic args}) {}
 
   void setState(ViewState viewState) {
     if (viewState == ViewState.busy) {
