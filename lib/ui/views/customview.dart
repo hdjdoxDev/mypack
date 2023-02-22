@@ -6,7 +6,7 @@ import 'view.dart';
 class CustomView<Model extends IModel> extends StatelessWidget {
   const CustomView({
     super.key,
-    required this.builder,
+    required this.body,
     this.initModel,
     this.title,
     this.onTapBar,
@@ -14,13 +14,15 @@ class CustomView<Model extends IModel> extends StatelessWidget {
     this.actions,
     this.leading,
     this.loading,
+    this.bottomSheet,
+    this.floatingActionButton,
   });
 
   final Widget Function(
     BuildContext context,
     Model model,
     Widget? child,
-  ) builder;
+  ) body;
   final void Function(Model)? initModel;
   final String? title;
   final void Function(Model)? onTapBar;
@@ -28,7 +30,8 @@ class CustomView<Model extends IModel> extends StatelessWidget {
   final List<Widget>? actions;
   final Widget? leading;
   final Widget? loading;
-
+  final Widget Function(Model)? bottomSheet;
+  final Widget Function(Model)? floatingActionButton;
   @override
   Widget build(BuildContext context) {
     return IView<Model>(
@@ -53,7 +56,10 @@ class CustomView<Model extends IModel> extends StatelessWidget {
             actions: actions ?? [],
           ),
         ),
-        body: builder(context, model, child),
+        body: body(context, model, child),
+        bottomSheet: bottomSheet != null ? bottomSheet!(model) : null,
+        floatingActionButton:
+            floatingActionButton != null ? floatingActionButton!(model) : null,
       ),
     );
   }
