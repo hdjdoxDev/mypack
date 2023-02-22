@@ -54,7 +54,7 @@ class DatabaseTableTable extends IDatabaseTable {
   static String get colDateCreated => "dateCreated";
   static DatabaseTableTable instance = DatabaseTableTable._();
   factory DatabaseTableTable() => instance;
-  DatabaseTableTable._() 
+  DatabaseTableTable._()
       : super(tableName, [
           DatabaseColumnFields(name: colName, type: DatabaseColumnType.str),
           DatabaseColumnFields(

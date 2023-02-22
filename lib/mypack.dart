@@ -10,7 +10,7 @@ export 'core/models/structures.dart' show Period;
 export 'core/services/device_storage.dart' show DeviceStorage;
 export 'core/services/notifications.dart'
     show INotificationApi, NotificationApi;
-export 'core/viewmodels/base_viewmodel.dart' show IModel;
+export 'core/viewmodels/viewmodel.dart' show IModel;
 export 'ui/shared/errors.dart' show Loading, SomethingWentWrongApp;
 // export 'core/models/user.dart' show IUser, IUserFields;
 export 'ui/shared/calendar_strip.dart' show CalendarStrip;
@@ -30,5 +30,6 @@ export 'ui/shared/layout.dart'
         SaveButton,
         emptyWidget,
         showConfirmDialog;
-export 'ui/views/base_view.dart' show BaseView, CustomView, TappableAppBar;
+export 'ui/views/view.dart' show IView;
+export 'ui/views/customview.dart' show CustomView, TappableAppBar;
 export 'core/enums/editmode.dart' show EditMode;
