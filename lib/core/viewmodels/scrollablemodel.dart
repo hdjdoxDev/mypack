@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'viewmodel.dart';
 
-abstract class IScrollableModel extends IModel {
+abstract class IScrollableModel<T extends IModelArgs> extends IModel<T> {
   ScrollController controllerScroll = ScrollController();
 
   void goToBottom({int delay = 100, int duration = 500, int threshold = 500}) =>
