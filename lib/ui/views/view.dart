@@ -6,6 +6,18 @@ import '../../core/viewmodels/viewmodel.dart';
 import '../../locator.dart';
 import '../shared/errors.dart';
 
+/// A view that offers often used features.
+/// 
+/// This view is a wrapper around [ChangeNotifierProvider] and [Consumer].
+/// 
+/// It offers the following features:
+/// - [initModel] as [ChangeNotifierProvider] initModel
+/// - [loading] as [Consumer] loading
+/// - [builder] as [Consumer] builder
+/// 
+/// The [builder] is the only required parameter.
+/// 
+/// The [builder] is a function that takes the [BuildContext], the [Model] and the [child] as parameters.
 class IView<Model extends IModel> extends StatefulWidget {
   final Widget Function(
     BuildContext context,

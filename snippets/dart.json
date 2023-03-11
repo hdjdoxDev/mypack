@@ -1,0 +1,55 @@
+{ 
+    "Create View": {
+      "prefix": "view",
+      "body": [
+        "import 'package:flutter/cupertino.dart';",
+        "import 'package:mypack/core/viewmodels/viewmodel.dart';",
+        "import 'package:mypack/ui/views/view.dart';",
+        "",
+        "class ${1:Example}View extends StatelessWidget {",
+        "  const ${1:Example}View({Key? key}) : super(key: key);",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return IView<${1:Example}Model>(",
+        "      initModel: (model) => {},",
+        "   builder: (context, model, _) => CupertinoPageScaffold(",
+        "navigationBar: const CupertinoNavigationBar(",
+        "leading: Text(\"${1:Example}\"),",
+        "),",
+        "        child: SingleChildScrollView(child: Column(children: ",
+        "const [",
+        "          Placeholder(),",
+        "        ])),",
+        "      ),",
+        "    );",
+        "  }",
+        "}",
+        "",
+        "class ${1:Example}Model extends IModel<NoModelArgs> {",
+        "  // late final Api _api;",
+        "",
+        "  // variables",
+        "",
+        "  // load",
+        "  @override",
+        "  void init({args = const NoModelArgs()}) async {",
+        "    // await locator.isReady<Api>();",
+        "    // _api = locator<Api>();",
+        "",
+        "    // init variables",
+        "  }",
+        "}",
+        "",
+        ""
+      ],
+      "description": "Create View"
+    },
+    
+    "Create Api": {
+      "prefix": "api",
+      "body": "",
+      "description": "Create Api"
+    }
+  }
+  

@@ -3,6 +3,25 @@ import 'package:flutter/material.dart';
 import '../../core/viewmodels/viewmodel.dart';
 import 'view.dart';
 
+/// A custom view that offers often used features.
+/// 
+/// This view is a wrapper around [IView] and [Scaffold].
+/// 
+/// It offers the following features:
+/// - [title] as [AppBar] title
+/// - [leading] as [AppBar] leading
+/// - [actions] as [AppBar] actions
+/// - [onTapBar] as [AppBar] onTap
+/// - [onDoubleTapBar] as [AppBar] onDoubleTap
+/// - [bottomSheet] as [Scaffold] bottomSheet
+/// - [floatingActionButton] as [Scaffold] floatingActionButton
+/// - [loading] as [IView] loading
+/// - [initModel] as [IView] initModel
+///   
+/// The [body] is the only required parameter.
+/// 
+/// The [body] is a function that takes the [BuildContext], the [Model] and the [child] as parameters.
+
 class CustomView<Model extends IModel> extends StatelessWidget {
   const CustomView({
     super.key,
@@ -65,6 +84,15 @@ class CustomView<Model extends IModel> extends StatelessWidget {
   }
 }
 
+/// A custom [AppBar] that can be tapped.
+/// 
+/// This widget is a wrapper around [GestureDetector] and [AppBar].
+/// 
+/// It offers the following features:
+/// 
+/// - [onTap] as [GestureDetector] onTap
+/// - [onDoubleTap] as [GestureDetector] onDoubleTap
+/// - [appBar] as [GestureDetector] child
 class TappableAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onTap;
   final VoidCallback onDoubleTap;
