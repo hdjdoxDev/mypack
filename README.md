@@ -1,13 +1,15 @@
 #  My Framework
+Backbone to easily write simple apps using the powerfull **Flutter Widgets** to design UIs and fast and flexible **APIs** to store data and use common services. Many features are still being added.
 
-Backbone to easily write simple apps using the powerfull Flutter Widgets to design UIs and fast and flexible SQFLite to store data. More features will be added in the future.
-This is the juice I got sqeezing the code collected in the last 3 years while I was learning Flutter e developing different apps.
-I don't have too much time to make a good documentation of the Library yet, but for sure it is a work in progress and it will be refined.
+This is the juice I got sqeezing the code collected while learning Flutter e developing different apps.
+It's a work in progress, so it's not perfect and it's not meant to be used in production, but it's a good starting point for a new project.
 Obviously not all the code or the ideas in this framework are mine, some might :).
 
-It's highly modular and works on a [View & ViewModel - Service] frame to keep UI dart code, Business logic and Storage/APIs interfaces separated.
-This frame lays on general [Models] that contains common objects definitions and implementations.
+It's highly modular and works on a [View & ViewModel - Service] frame to keep UI dart code, business logic and 
+API managment separated.
+This frame lays on general [Models] that contains abstract objects definitions and implementations.
 
+<!-- 
 | Feature | Android | iOS | Linux | macOS |
 | :--- | :---: | :---: | :---: | :---: |
 | Examples for (View - ViewModel) | ✔️ | ✔️ | ✔️ | ✔️ |
@@ -16,8 +18,21 @@ This frame lays on general [Models] that contains common objects definitions and
 | Notifications | ✔️ | ❌ | ❌ | ❌️ |
 | Device Storage | ✔️ | ❌ | ✔️ | ❌️ |
 | CSV support | ✔️ | ❌ | ✔️ | ❌️ |
-| Peer to Peer | ❌ | ❌ | ❌️ | ❌️ |
+| Peer to Peer | ❌ | ❌ | ❌️ | ❌️ | -->
 
+## Content
+- [/lib](lib/README.md#content) - the framework
+- [/snippets](snippets/README.md#list) - snippets for VSCode
+- [/example](example/README.md#content) - example app
+- [/fonts](fonts/README.md#content) - fonts
+- pubspec.yaml - dependencies
+
+## Todo
+
+- [ ] [Snippets](snippets/README.md#list)
+- [ ] [Lib](lib/README.md#todo)
+
+## Willdo
 
 ## DevOps
 

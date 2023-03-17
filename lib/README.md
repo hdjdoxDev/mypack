@@ -1,19 +1,29 @@
 # My Framework for Flutter Apps
 
+<!-- ## ToC
+
 - [My Framework for Flutter Apps](#my-framework-for-flutter-apps)
+  - [ToC](#toc)
+  - [Content](#content)
   - [Done](#done)
   - [Todo](#todo)
-  - [Willdo](#willdo)
+  - [Willdo](#willdo) 
+*** -->
 
-*** 
+## Content
+- [core](core/README.md#content) - backend
+- [frontend](frontend/README.md#content) - frontend
+- [utils](utils/README.md#content) - utils
+- mypack.dart - exports
 
+<!-- ***
 ## Done
+ -->
 
-- [x] Examples
+***
 
 ## Todo
 
-- [ ] Snippets
 - [ ] Preferred Preferences
   - [ ] Settings
   - [ ] Theme Data
