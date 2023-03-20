@@ -1,12 +1,18 @@
 # Snippets
 
 ## List
-
+- [x] main
 - [ ] Create App
   - [ ] Cupertino App
   - [ ] Material App
 - [ ] Locator
-- [ ] Routes
+- [x] Routes
+  - [x] routes
+  - [x] newRoute
+  - [x] subRoutes
+  - [x] pathsFromHome
+  - [x] iconsFromHome
+  - [x] backslachString
 - [ ] Create View
   - [ ] Cupertino Tab View
   - [ ] Cupertino Page View

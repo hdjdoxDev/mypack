@@ -1,20 +1,20 @@
-import 'package:flutter/material.dart';
-import 'package:mypack/frontend/shared/layout.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:mypack/frontend/frontend.dart';
 
 import 'routes.dart';
 
-const String title = "App title";
+const String title = 'Eg';
 
 class EgHomeView extends StatelessWidget {
   const EgHomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(title),
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text(title),
       ),
-      body: Center(
+      child: Center(
         child: GridView.count(
           crossAxisCount: 4,
           children: [
@@ -32,7 +32,7 @@ class EgHomeView extends StatelessWidget {
 
 extension EgRoutesIcons on EgRoutes {
   static const Map<String, IconData> icons = {
-    EgRoutes.home: Icons.home,
-    // EgRoutes.eg: Icons.eg,
+    EgRoutes.home: CupertinoIcons.home,
+    // EgRoutes.eg: CupertinoIcons.eg,
   };
 }

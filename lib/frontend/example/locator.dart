@@ -1,7 +1,8 @@
-import 'package:mypack/frontend/locator.dart';
+import 'package:mypack/frontend/frontend.dart';
 
 void setupEgLocator() {
   final l = locator;
+  'use $l';
   // services
   // l.registerLazySingleton(() => EgService());
   // l.registerLazySingletonAsync<EgSqflApi>(() => EgSqflApi.init());

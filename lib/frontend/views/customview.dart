@@ -4,9 +4,9 @@ import '../viewmodels/viewmodel.dart';
 import 'view.dart';
 
 /// A custom view that offers often used features.
-/// 
+///
 /// This view is a wrapper around [IView] and [Scaffold].
-/// 
+///
 /// It offers the following features:
 /// - [title] as [AppBar] title
 /// - [leading] as [AppBar] leading
@@ -17,9 +17,9 @@ import 'view.dart';
 /// - [floatingActionButton] as [Scaffold] floatingActionButton
 /// - [loading] as [IView] loading
 /// - [initModel] as [IView] initModel
-///   
+///
 /// The [body] is the only required parameter.
-/// 
+///
 /// The [body] is a function that takes the [BuildContext], the [Model] and the [child] as parameters.
 
 class CustomView<Model extends IModel> extends StatelessWidget {
@@ -62,7 +62,7 @@ class CustomView<Model extends IModel> extends StatelessWidget {
           onDoubleTap:
               onDoubleTapBar != null ? () => onDoubleTapBar!(model) : () => {},
           appBar: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             foregroundColor: Theme.of(context).colorScheme.background,
             title: Text(
               title ?? 'Custom View',
@@ -85,11 +85,11 @@ class CustomView<Model extends IModel> extends StatelessWidget {
 }
 
 /// A custom [AppBar] that can be tapped.
-/// 
+///
 /// This widget is a wrapper around [GestureDetector] and [AppBar].
-/// 
+///
 /// It offers the following features:
-/// 
+///
 /// - [onTap] as [GestureDetector] onTap
 /// - [onDoubleTap] as [GestureDetector] onDoubleTap
 /// - [appBar] as [GestureDetector] child

@@ -34,16 +34,16 @@ class _HomeViewState extends State<HomeView> {
           children: [
             // AppIcons
             AppIcon(
-              icon: Icons.bed_rounded,
-              onPressed: () => Navigator.pushNamed(context, '/sleep'),
+              iconData: Icons.bed_rounded,
+              onTap: () => Navigator.pushNamed(context, '/sleep'),
             ),
             AppIcon(
-              icon: Icons.star,
-              onPressed: () => Navigator.pushNamed(context, '/bestof'),
+              iconData: Icons.star,
+              onTap: () => Navigator.pushNamed(context, '/bestof'),
             ),
             AppIcon(
-              icon: Icons.auto_fix_high,
-              onPressed: () => Navigator.pushNamed(context, '/routines'),
+              iconData: Icons.auto_fix_high,
+              onTap: () => Navigator.pushNamed(context, '/routines'),
             ),
             // End of AppIcons
           ],

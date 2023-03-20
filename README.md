@@ -23,7 +23,7 @@ This frame lays on general [Models] that contains abstract objects definitions a
 ## Content
 - [/lib](lib/README.md#content) - the framework
 - [/snippets](snippets/README.md#list) - snippets for VSCode
-- [/example](example/README.md#content) - example app
+<!-- - [/example](example/README.md#content) - example app -->
 - [/fonts](fonts/README.md#content) - fonts
 - pubspec.yaml - dependencies
 
@@ -34,8 +34,9 @@ This frame lays on general [Models] that contains abstract objects definitions a
 
 ## Willdo
 
-## DevOps
+- [ ] [Lib](lib/README.md#willdo)
 
+## DevOps
 ### Create App
 
 > - go to the folder where you want to create the app and run:
@@ -63,9 +64,7 @@ This frame lays on general [Models] that contains abstract objects definitions a
 
 ### Create CView
 
-> CView -> CViewModel -> cWidgets, cViewModels
+> CView -> CVModel -> cWidgets, cVModels
 
 
 Dependencies: see ./pubspec.yaml
-
-[Dev](lib/README.md)

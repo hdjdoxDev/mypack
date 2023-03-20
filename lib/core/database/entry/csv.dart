@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:mypack/core/database/entry/model.dart';
 import 'package:mypack/utils/time.dart';
 

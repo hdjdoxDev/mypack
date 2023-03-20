@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:mypack/frontend/viewmodels/viewmodel.dart';
-import 'package:mypack/frontend/views/view.dart';
+import 'package:mypack/frontend/frontend.dart';
 
 import 'routes.dart';
 

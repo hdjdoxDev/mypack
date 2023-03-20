@@ -32,6 +32,7 @@
 
 ## Willdo
 
+- [ ] Firebase
 - [ ] Login/Auth
 - [ ] Speech Recognition
 - [ ] Icloud sync
