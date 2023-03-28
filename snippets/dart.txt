@@ -36,7 +36,32 @@
   "Create Material app": {
     "isFileTemplate": true,
     "prefix": "matapp",
-    "body": [],
+    "body": [
+      "// File created by sn. matapp",
+      "import 'package:flutter/material.dart';",
+      "",
+      "import 'routes.dart';",
+      "",
+      "class ${1:Name}App extends StatelessWidget {",
+      "  const ${1:Name}App({super.key});",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return MaterialApp(",
+      "      debugShowCheckedModeBanner: false,",
+      "      title: '${1:Name}',",
+      "      // dark theme with yellow accent",
+      "      theme: ThemeData(",
+      "        brightness: Brightness.dark,",
+      "        primarySwatch: Colors.yellow,",
+      "        visualDensity: VisualDensity.adaptivePlatformDensity,",
+      "      ),",
+      "      initialRoute: ${1:Name}Routes.home,",
+      "      routes: ${1:Name}Routes.routes,",
+      "    );",
+      "  }",
+      "}"
+    ],
     "description": ""
   },
 
@@ -54,26 +79,27 @@
     "body": [
       "import 'package:flutter/material.dart';",
       "",
+      "import '../routes.dart';",
       "import 'view.dart';",
       "",
       "class ${1:Name}Routes {",
-      "  static const String home = '/';",
+      "  static const String home = ${2:Parent}Routes.${3:name}Home;",
       "",
-      "  // other views",
-      "  // static const String view = '/view'; // sn. backslashString$2",
-      "",
-      "  // subsections",
-      "  // static const String sub = '/sub'; // sn. backslashString$4",
-      "",
+      "  // other views - sn. localRoute",
+      "  $4",
+      "  // subsections - sn. subRouteHome",
+      "  $5",
       "  static Map<String, Widget Function(BuildContext)> get routes => {",
       "        home: (context) => const ${1:Name}View(),",
-      "        // view: (context) => const IView(), // sn. newRoute$3",
-      "        // ...SubRoutes.routes.map((key, value) => MapEntry(sub + key, value)), // sn. subRoutes$5",
-      "",
+      "        // local routes - sn. newRoute",
+      "        $6",
+      "        // subroutes - ...SubRoutes.routes,",
+      "        $7",
       "      };",
       "",
       "  static get pathsFromHome => [",
-      "        // sub + SubRoutes.home, // sn. pathsFromHome$6",
+      "        // subRoutes home",
+      "        $8",
       "      ];",
       "}"
     ],
@@ -82,40 +108,28 @@
 
   "New Route": {
     "prefix": "newRoute",
-    "body": [
-      "${1:name}: (context) => const ${2:Name}View(), // sn. newRoute",
-    ],
-    "description": ""
-  },
-  "Sub Routes": {
-    "prefix": "subRoutes",
-    "body": [
-      "...${1:Sub}Routes.routes.map((key, value) => MapEntry(${2:sub} + key, value)), // sn. subRoutes",
-
-    ],
+    "body": ["${1:name}: (context) => const ${2:Name}View(), // sn. newRoute"],
     "description": ""
   },
 
-  "Paths From Home": {
-    "prefix": "pathsFromHome",
-    "body": [
-      "${1:sub} + ${2:Sub}Routes.home, // sn. pathsFromHome",
-    ],
-    "description": ""
+  "Sub Route Home": {
+    "prefix": "subRouteHome",
+    "body": "static const String $1Home = '${${home}}$1/'; // sn. subRouteHome",
+    "description": "create home route path for subroutes"
   },
 
-  "Icons From Home":{
+  "Local Route": {
+    "prefix": "localRoute",
+    "body": "static const String $1 = '${${home}}$1'; // sn. localRoute",
+    "description": "Back Slash Static Const String"
+  },
+
+  "Icons From Home": {
     "prefix": "iconsFromHome",
     "body": [
-      "${1:Par}Routes.${2:sub} + ${3:Sub}Routes.home: Icons.${4:help}, // sn. iconsFromHome",
+      "${1:Par}Routes.${2:route}: Icons.${3:help}, // sn. iconsFromHome"
     ],
     "description": ""
-  },
-
-  "Back Slash String": {
-    "prefix": "backslashString",
-    "body": "static const String $1 = '/$1'; sn. backslashString",
-    "description": "Back Slash Static Const String"
   },
 
   ////////////////////////// Locator //////////////////////////
@@ -177,6 +191,49 @@
     "description": "Create Cupertino View"
   },
 
+  "Create Home View": {
+    "prefix": "homeview",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:mypack/frontend/frontend.dart';",
+      "",
+      "import 'routes.dart';",
+      "",
+      "class ${1:Name}View extends StatelessWidget {",
+      "  const ${1:Name}View({super.key});",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "      appBar: AppBar(",
+      "        title: const Text('${1:Name}'),",
+      "        backgroundColor: Theme.of(context).colorScheme.primary,",
+      "        foregroundColor: Theme.of(context).colorScheme.background,",
+      "      ),",
+      "      body: Center(",
+      "        child: GridView.count(",
+      "          crossAxisCount: 4,",
+      "          children: [",
+      "            for (final route in ${1:Name}Routes.pathsFromHome)",
+      "              AppIcon(",
+      "                onTap: () => Navigator.pushNamed(context, route),",
+      "                iconData: ${1:Name}RoutesIcons.icons[route] ?? Icons.help,",
+      "              ),",
+      "          ],",
+      "        ),",
+      "      ),",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "extension ${1:Name}RoutesIcons on ${1:Name}Routes {",
+      "  static const Map<String, IconData> icons = {",
+      "    ${1:Name}Routes.home: Icons.home,",
+      "  };",
+      "}"
+    ],
+    "description": "Create Default Home View"
+  },
   "Create View Model": {
     "prefix": "vmodel",
     "body": [],

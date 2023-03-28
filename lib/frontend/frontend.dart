@@ -10,4 +10,16 @@ export 'viewmodels/scrollablemodel.dart' show IScrollableModel;
 export 'viewmodels/editmodel.dart' show EditModel, EditModelArgs;
 export 'viewmodels/detailmodel.dart' show DetailModel, DetailModelArgs;
 
-export 'shared/layout.dart' show MyIconButton, PaddedColumn, Header, AppIcon;
+export 'shared/datetimefield.dart' show DateAndTimeField;
+export 'shared/layout.dart'
+    show
+        MyIconButton,
+        PaddedColumn,
+        Header,
+        AppIcon,
+        showConfirmDialog,
+        CancelButton,
+        SaveButton,
+        LabeledField,
+        StyledButton,
+        Paragraph;

@@ -30,10 +30,10 @@ class DeviceStorage {
     required this.permissionStatus,
   }) : defaultPath = localPath;
 
-  static Future<DeviceStorage> getInstance() async {
+  static Future<DeviceStorage> init() async {
     if (_instanceIsSet == false) {
       _instanceIsSet = true;
-      var permissionStatus = await getPermissionStatus();
+      var permissionStatus = PermissionStatus.granted;
       if (permissionStatus.isGranted) {
         _instance = DeviceStorage._(
           downloadPath: await getDownloadPath(),
@@ -116,18 +116,18 @@ class DeviceStorage {
     if (permissionStatus.isGranted) {
       return true;
     }
-    var res = await Permission.storage.request();
-    if (res.isGranted) {
-      _instance = DeviceStorage._(
-        downloadPath: await getDownloadPath(),
-        documentsPath: await getDocumentsPath(),
-        localPath: await getLocalPath(),
-        tmpPath: await getTempPath(),
-        permissionStatus: res,
-      );
-      return true;
-    }
-    return false;
+    // var res = await Permission.storage.request();
+    // if (res.isGranted) {
+    _instance = DeviceStorage._(
+      downloadPath: await getDownloadPath(),
+      documentsPath: await getDocumentsPath(),
+      localPath: await getLocalPath(),
+      tmpPath: await getTempPath(),
+      permissionStatus: PermissionStatus.granted,
+    );
+    return true;
+    // }
+    // return false;
   }
 
   // write file

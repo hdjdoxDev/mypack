@@ -11,3 +11,6 @@
   - [ ] notifications
   - [ ] tcp/ip
   
+## Todo
+- [ ] Adjust DeviceStorage for desktop
+- [ ] [Database](database/README.md#todo)

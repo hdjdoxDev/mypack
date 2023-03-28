@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   android_path_provider: ^0.3.0
+  datetime_picker_formfield: ^2.0.1
   file_picker: ^5.2.3
   flex_color_scheme: ^6.1.1
   flutter:
