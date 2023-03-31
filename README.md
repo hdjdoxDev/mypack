@@ -41,7 +41,7 @@ This frame lays on general [Models] that contains abstract objects definitions a
 
 > - go to the folder where you want to create the app and run:
 > 
->       $ flutter create --org=hdjdox.com --platform=<platforms> --description="This is my latest app" --project-name <pname> <fname>
+>       $ flutter create --org=<organisation>.com --platform=<platforms> --description="This is my latest app" --project-name=<pname> <fname>
 > -  set mypack as a dependency in pubspec.yaml
 > -  copy lib/[main, routes, locator, view, model, widgets] from mypack/example
 > -  create files with scripts and fill them with snippets

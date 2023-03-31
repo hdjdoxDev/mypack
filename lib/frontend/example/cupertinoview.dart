@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:mypack/frontend/frontend.dart';
 
-import 'routes.dart';
-
 const String title = 'Eg';
 
 class EgView extends StatelessWidget {
@@ -19,11 +17,4 @@ class EgView extends StatelessWidget {
       ),
     );
   }
-}
-
-extension EgRoutesIcons on EgRoutes {
-  static const Map<String, IconData> icons = {
-    EgRoutes.home: CupertinoIcons.home,
-    // EgRoutes.eg: CupertinoIcons.eg,
-  };
 }

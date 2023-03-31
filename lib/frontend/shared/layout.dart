@@ -127,7 +127,7 @@ class LabeledField extends StatelessWidget {
 }
 
 class StyledButton extends StatelessWidget {
-  const StyledButton({required this.child, required this.onPressed, Key? key})
+  const StyledButton({required this.onPressed, required this.child, Key? key})
       : super(key: key);
   final Widget child;
   final void Function() onPressed;
