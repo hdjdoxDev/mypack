@@ -1,1 +1,0 @@
-export 'frontend/locator.dart' show locator;

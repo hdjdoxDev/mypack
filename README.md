@@ -60,7 +60,7 @@ This frame lays on general [Models] that contains abstract objects definitions a
 
 ### Create TableApi
 
-> T -> TEntry, TFields -> ITApi, DumbTApi -> TApi, TTable
+> T -> TEntry, TFields -> ITApi, DummmyTApi -> TApi, TTable
 
 ### Create CView
 
