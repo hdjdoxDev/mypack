@@ -10,7 +10,7 @@ class ExampleView extends StatelessWidget {
       initModel: (model) => {},
       builder: (context, model, _) => Scaffold(
         appBar: AppBar(),
-        body: SingleChildScrollView(child: Column(children: const [])),
+        body: const SingleChildScrollView(child: Column(children: [])),
       ),
     );
   }
