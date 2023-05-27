@@ -22,6 +22,9 @@ This frame lays on general [Models] that contains abstract objects definitions a
 
 ## Content
 - [/lib](lib/README.md#content) - the framework
+- [/frontend](frontend/README.md#content) - frontend
+- [/core](core/README.md#content) - backend
+- [/utils](utils/README.md#content) - utils
 - [/snippets](snippets/README.md#list) - snippets for VSCode
 <!-- - [/example](example/README.md#content) - example app -->
 - [/fonts](fonts/README.md#content) - fonts
@@ -29,8 +32,24 @@ This frame lays on general [Models] that contains abstract objects definitions a
 
 ## Todo
 
+- [ ] Preferred Preferences
+  - [ ] Settings
+  - [ ] Theme Data
+
+***
+
+## Willdo
+
+- [ ] Firebase
+- [ ] Login/Auth
+- [ ] Speech Recognition
+- [ ] Icloud sync
+- [ ] Peer to Peer
+  - [ ] or TCP/IP?
+- [ ] Platform/Screen Dependancy for views
+- [ ] Platform Dependancy for services / conditional imports
+
 - [ ] [Snippets](snippets/README.md#list)
-- [ ] [Lib](lib/README.md#todo)
 
 ## Willdo
 
@@ -60,7 +79,7 @@ This frame lays on general [Models] that contains abstract objects definitions a
 
 ### Create TableApi
 
-> T -> TEntry, TFields -> ITApi, DumbTApi -> TApi, TTable
+> T -> TEntry, TFields -> ITApi, DummmyTApi -> TApi, TTable
 
 ### Create CView
 
